@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyramid Image Transformer | Professional Edition</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Pyramid Image Transformer</h1>
+      <p class="tagline">Transform your images into stunning 3D pyramid projections</p>
+    </header>
+    
+    <div class="main-content">
+      <section class="upload-section">
+        <div class="upload-card">
+          <div class="upload-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 16L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 11L12 8 15 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 12C22 16.714 22 19.071 20.535 20.535C19.071 22 16.714 22 12 22C7.286 22 4.929 22 3.464 20.535C2 19.071 2 16.714 2 12C2 7.286 2 4.929 3.464 3.464C4.929 2 7.286 2 12 2C16.714 2 19.071 2 20.535 3.464C21.509 4.438 21.836 5.807 21.945 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2>Upload Your Image</h2>
+          <p>Select any image to transform it into a pyramid projection</p>
+          <input type="file" id="imageInput" accept="image/*">
+          <label for="imageInput" class="upload-button">Choose Image</label>
+        </div>
+      </section>
+      
+      <section class="preview-section">
+        <div class="preview-container">
+          <div class="original-image-container">
+            <h2>Original Image</h2>
+            <div class="image-wrapper">
+              <img id="originalImage" src="placeholder.jpg" alt="Your image will appear here">
+              <div class="empty-state" id="originalEmptyState">
+                <p>Upload an image to see it here</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="result-container">
+            <h2>Pyramid Transformation</h2>
+            <div class="canvas-wrapper" id="pyramidCanvas">
+              <div class="empty-state" id="resultEmptyState">
+                <p>Upload an image to see the 3D pyramid</p>
+              </div>
+              <div class="loading-indicator" id="loadingIndicator">
+                <div class="spinner"></div>
+                <p>Generating pyramid...</p>
+              </div>
+            </div>
+            
+            <div class="controls">
+              <div class="control-group">
+                <label for="rotateY">Rotation</label>
+                <input type="range" id="rotateY" min="0" max="360" value="45" class="slider">
+                <div class="value-display"><span id="rotationValue">45°</span></div>
+              </div>
+              
+              <button id="downloadBtn" class="download-button" disabled>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21H7.8C6.11984 21 5.27976 21 4.63803 20.673C4.07354 20.3854 3.6146 19.9265 3.32698 19.362C3 18.7202 3 17.8802 3 16.2V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17 10L12 15M12 15L7 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Download Pyramid
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <footer>
+      <p>Made with advanced 3D mapping technology</p>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
